@@ -4,8 +4,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <div class="sidebar">
+        <h1 class="logo">WS</h1>
+        <nav class="sidebar-nav">
+            <a href="#">About Me</a>
+            <a href="#">My Portfolio</a>
+            <a href="#">Coding Examples</a>
+            <a href="#">SCS Scheme</a>
+            <a href="#" class="contact-link">
+                <span class="contact-link__text">Contact Me</span>
+                <span class="icon-keyboard_arrow_down"></span>
+            </a>
+        </nav>
+    </div>
+    <div class="header">
+        <div class="name">
+            <h1>My Name is William Stolworthy</h1>
+            <p>I'm a Web Developer</p>
+        </div>
+        <a href="#projects" class="scroll-down">
+            Scroll down
+            <span class="icon-chevron-down"></span>
+        </a>
+    </div>
+    <div class="projects" id="projects">
+        <a class="project-item" href="#">
+            <img class="project-image" src="img/placeholder.png" alt="Screenshot of Project 1">
+            <div class="project-content">
+                <h3 class="project-title">Project One</h3>
+                <p class="project-description">A short description of project one goes here.</p>
+                <span class="project-link">
+                    <span class="project-link-text">View Project</span>
+                    <span class="icon-chevron-down"></span>
+                </span>
+            </div>
+        </a>
+        <a class="project-item" href="#">
+            <img class="project-image" src="img/placeholder.png" alt="Screenshot of Project 2">
+            <div class="project-content">
+                <h3 class="project-title">Project Two</h3>
+                <p class="project-description">A short description of project two goes here.</p>
+                <span class="project-link">
+                    <span class="project-link-text">View Project</span>
+                    <span class="icon-chevron-down"></span>
+                </span>
+            </div>
+        </a>
+        <a class="project-item" href="#">
+            <img class="project-image" src="img/placeholder.png" alt="Screenshot of Project 3">
+            <div class="project-content">
+                <h3 class="project-title">Project Three</h3>
+                <p class="project-description">A short description of project three goes here.</p>
+                <span class="project-link">
+                    <span class="project-link-text">View Project</span>
+                    <span class="icon-chevron-down"></span>
+                </span>
+            </div>
+        </a>
+        <a class="project-item" href="#">
+            <img class="project-image" src="img/placeholder.png" alt="Screenshot of Project 4">
+            <div class="project-content">
+                <h3 class="project-title">Project Four</h3>
+                <p class="project-description">A short description of project four goes here.</p>
+                <span class="project-link">
+                    <span class="project-link-text">View Project</span>
+                    <span class="icon-chevron-down"></span>
+                </span>
+            </div>
+        </a>
+        <a class="project-item" href="#">
+            <img class="project-image" src="img/placeholder.png" alt="Screenshot of Project 5">
+            <div class="project-content">
+                <h3 class="project-title">Project Five</h3>
+                <p class="project-description">A short description of project five goes here.</p>
+                <span class="project-link">
+                    <span class="project-link-text">View Project</span>
+                    <span class="icon-chevron-down"></span>
+                </span>
+            </div>
+        </a>
+        <a class="project-item" href="#">
+            <img class="project-image" src="img/placeholder.png" alt="Screenshot of Project 6">
+            <div class="project-content">
+                <h3 class="project-title">Project Six</h3>
+                <p class="project-description">A short description of project six goes here.</p>
+                <span class="project-link">
+                    <span class="project-link-text">View Project</span>
+                    <span class="icon-chevron-down"></span>
+                </span>
+            </div>
+        </a>
+    </div>
+    <div class="contact-section">
+        <div class="contact">
+            <div class="contact-details">
+                <h3>Get In Touch</h3>
+                <p>Sed interdum est vel sollicitudin bibendum. Proin at accumsan nulla, non facilisis massa.</p>
+                <h4 class="contact-details__phone">00000 000000</h4>
+                <h4 class="contact-details__email">info@netmatters.com</h4>
+                <p>Phasellus cursus urna in neque faucibus, eu dapibus magna vehicula. Sed tempus cursus mauris et scelerisque. Pellentesque ornare mi at fringilla egestas.</p>
+            </div>
+            <div class="contact-form">
+                <form class="form-grid">
+                    <input type="text" class="form form-first-name" placeholder="First Name*" required>
+                    <input type="text" class="form form-last-name" placeholder="Last Name*" required>
+                    <input type="email" class="form form-email" placeholder="Email Address*" required>
+                    <input type="text" class="form form-subject" placeholder="Subject">
+                    <textarea class="form form-message" placeholder="Message"></textarea>
+                </form>
+                <button type="submit" class="btn form-submit">Submit</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

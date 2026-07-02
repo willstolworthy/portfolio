@@ -1,0 +1,68 @@
+@use '../utilities/variables';
+@use '../utilities/mixins';
+
+.contact-section {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40vh;
+    padding: 16px;
+
+    @include mixins.mq("medium") {
+        margin-left: 240px;
+        width: calc(100% - 240px);
+    }
+}
+
+.contact {
+    display: flex;
+    box-sizing: border-box;
+    width: 85%;
+    padding: 16px;
+    background-color: variables.$body-light;
+}
+
+.contact-details {
+    width: 40%;
+}
+
+.contact-form {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr; // 1x2 default
+    gap: 10px;
+
+    .form-email,
+    .form-subject,
+    .form-message {
+        grid-column: 1 / -1;
+        height: auto;
+    }
+}
+
+.form-submit {
+    margin-top: 10px;
+    width: 6rem;
+
+    &:hover {
+        background-color: #7e6e58;
+        border-color: #7e6e58;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    }
+}
+
+.form {
+    border: 1px solid variables.$body-border;
+    padding: 3px 3px;
+}
+
+.form:focus {
+    outline: 0;
+}

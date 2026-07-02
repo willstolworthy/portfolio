@@ -1,0 +1,40 @@
+@use '../utilities/variables';
+@use '../utilities/mixins';
+
+.header {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // placeholder — swap for background-image: url('../img/banner.jpg');
+    background-image: linear-gradient(135deg, #2c3e50, #4ca1af);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    @include mixins.mq("medium") {
+        margin-left: 240px;
+        width: calc(100% - 240px);
+    }
+
+    .name {
+        text-align: center;
+        color: #fff;
+    }
+
+    .scroll-down {
+        position: absolute;
+        bottom: 12px;
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        text-align: center;
+        color: #fff;
+        text-decoration: none;
+    }
+}

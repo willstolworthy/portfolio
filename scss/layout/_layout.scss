@@ -1,0 +1,24 @@
+@use '../utilities/variables';
+@use '../utilities/mixins';
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+
+    @include mixins.mq("medium") {
+        width: 750px;
+    }
+
+    @include mixins.mq("large") {
+        width: 970px;
+    }
+
+    @include mixins.mq("xlarge") {
+        width: 1200px;
+    }
+}
+
+.body {
+    background-color: variables.$body-main;
+}
