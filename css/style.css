@@ -337,12 +337,20 @@ h6 {
   font-family: "PT Serif", serif;
 }
 
-.icon-keyboard_arrow_down:before {
-  content: "\e901";
-}
-
 .icon-chevron-down:before {
   content: "\e900";
+}
+
+.icon-github:before {
+  content: "\e902";
+}
+
+.icon-phone1:before {
+  content: "\e904";
+}
+
+.icon-email:before {
+  content: "\e903";
 }
 
 .btn {
@@ -406,18 +414,26 @@ h6 {
   }
 }
 .sidebar .logo {
-  margin: 22px 0 32px;
+  margin: 0;
+  padding: 20px 0 0;
   font-family: "Cinzel Decorative", serif;
   font-size: 4rem;
   color: #18140c;
 }
+.sidebar .logo:hover {
+  transform: translateY(-4px);
+}
 
 .sidebar-nav {
+  box-sizing: border-box;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 24px;
+  align-items: start;
+  justify-content: center;
+  gap: 14px;
   width: 100%;
+  padding-left: 30px;
 }
 .sidebar-nav a {
   color: #52351e;
@@ -426,19 +442,12 @@ h6 {
 .sidebar-nav a:hover {
   text-decoration: underline;
 }
-.sidebar-nav .contact-link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  border: 1px solid #3c352a;
-  padding: 8px 16px;
+.sidebar-nav h4 {
+  margin: 0;
+  color: #444;
 }
-.sidebar-nav .contact-link:hover {
-  text-decoration: none;
-}
-.sidebar-nav .contact-link:hover .contact-link__text {
-  text-decoration: underline;
+.sidebar-nav .contact-heading {
+  margin-top: 30px;
 }
 
 .header {
@@ -571,6 +580,7 @@ h6 {
   width: 85%;
   padding: 16px;
   background-color: #d8ccb4;
+  border: 1px solid #7e6e58;
 }
 
 .contact-details {
