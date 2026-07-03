@@ -61,3 +61,22 @@
         margin-top: 30px;
     }
 }
+
+.socials {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+
+    .social-link {
+        display: flex;
+        color: variables.$background-link-color;
+        font-size: 1.25rem;
+
+        &:hover {
+            text-decoration: none;
+            color: variables.$button-dark;
+            transform: translateY(-4px);
+        }
+    }
+}

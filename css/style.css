@@ -450,6 +450,23 @@ h6 {
   margin-top: 30px;
 }
 
+.socials {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+.socials .social-link {
+  display: flex;
+  color: #52351e;
+  font-size: 1.25rem;
+}
+.socials .social-link:hover {
+  text-decoration: none;
+  color: #18140c;
+  transform: translateY(-4px);
+}
+
 .header {
   position: relative;
   min-height: 100vh;
@@ -623,6 +640,34 @@ h6 {
 
 .form:focus {
   outline: 0;
+}
+
+.about {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+  padding: 16px;
+}
+@media (min-width: 768px) {
+  .about {
+    margin-left: 240px;
+    width: calc(100% - 240px);
+  }
+}
+
+.about-me {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 85%;
+  padding: 16px;
+  background-color: #d8ccb4;
+  border: 1px solid #7e6e58;
+}
+.about-me h1 {
+  align-items: center;
 }
 
 /*# sourceMappingURL=style.css.map */
