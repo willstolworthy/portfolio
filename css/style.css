@@ -357,6 +357,10 @@ h6 {
   content: "\e901";
 }
 
+.icon-arrow-right:before {
+  content: "\e905";
+}
+
 .btn {
   display: inline-block;
   text-align: center;
@@ -663,6 +667,17 @@ h6 {
 
 .contact-details {
   width: 100%;
+}
+.contact-details a {
+  color: inherit;
+  text-decoration: none;
+}
+.contact-details a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+.contact-details a:hover {
+  text-decoration: underline;
 }
 @media (min-width: 1260px) {
   .contact-details {
