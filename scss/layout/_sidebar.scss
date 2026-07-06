@@ -1,6 +1,37 @@
 @use '../utilities/variables';
 @use '../utilities/mixins';
 
+.nav-toggle {
+    display: none;
+}
+
+.hamburger {
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    z-index: 3;
+    background: transparent;
+    cursor: pointer;
+
+    @include mixins.mq("medium") {
+        display: none;
+    }
+
+    .icon-menu {
+        font-size: 2rem;
+        line-height: 1;
+        color: variables.$background-link-color;
+    }
+}
+
+.nav-toggle:checked ~ .sidebar {
+    display: flex;
+}
+
 .sidebar {
     display: none;
     box-sizing: border-box;
@@ -12,6 +43,7 @@
     width: 240px;
     height: 100%;
     padding: 10px;
+    z-index: 2;
     background-color: variables.$body-background-color;
     box-shadow: inset -8px 0 8px -8px rgba(0, 0, 0, 0.4);
 
@@ -69,6 +101,7 @@
 
     .contact-heading {
         margin-top: 30px;
+        margin-bottom: 30px;
 
         a {
             color: #444;

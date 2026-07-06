@@ -17,34 +17,50 @@
 
 .contact {
     display: flex;
+    flex-direction: column;
     box-sizing: border-box;
     width: 85%;
     padding: 16px;
     background-color: variables.$body-light;
     border: 1px solid #7e6e58;
+
+    @include mixins.mq("xlarge") {
+        flex-direction: row;
+    }
 }
 
 .contact-details {
-    width: 40%;
+    width: 100%;
+
+    @include mixins.mq("xlarge") {
+        width: 40%;
+    }
 }
 
 .contact-form {
-    width: 60%;
+    width: 100%;
     display: flex;
     flex-direction: column;
+
+    @include mixins.mq("xlarge") {
+        width: 60%;
+    }
 }
 
 .form-grid {
     flex: 1;
     display: grid;
-    grid-template-columns: 1fr 1fr; // 1x2 default
+    grid-template-columns: 1fr; // stacked on mobile
     gap: 10px;
 
-    .form-email,
-    .form-subject,
-    .form-message {
-        grid-column: 1 / -1;
-        height: auto;
+    @include mixins.mq("xlarge") {
+        grid-template-columns: 1fr 1fr;
+
+        .form-email,
+        .form-subject,
+        .form-message {
+            grid-column: 1 / -1;
+        }
     }
 }
 
