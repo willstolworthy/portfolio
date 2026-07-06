@@ -1,7 +1,7 @@
 @use '../utilities/variables';
 @use '../utilities/mixins';
 
-.about {
+.scs {
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -15,7 +15,7 @@
     }
 }
 
-.about-me {
+.scs-scheme {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -26,11 +26,21 @@
 
     h1,
     h2,
-    h3 {
-        margin: 7px;
+    h3,
+    h4,
+    p,
+    a {
+        margin: 10px;
     }
 
-    p {
-        margin: 5px;
+    a {
+        display: inline-block;
+        align-self: flex-start;
+        text-decoration: none;
+        color: variables.$background-link-color;
+
+        &:hover {
+        text-decoration: underline;
+        }
     }
 }
