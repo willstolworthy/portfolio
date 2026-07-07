@@ -537,7 +537,7 @@ h6 {
   }
 }
 .header .name {
-  margin-top: -250px;
+  margin-top: -300px;
   text-align: center;
   color: #fff;
 }
@@ -582,7 +582,6 @@ h6 {
 
 .project-item {
   box-sizing: border-box;
-  border: 1px solid #94866d;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -633,6 +632,8 @@ h6 {
   flex-direction: column;
   padding: 8px;
   min-height: 0;
+  border: 1px solid #94866d;
+  border-top: none;
 }
 
 .contact-section {
@@ -763,6 +764,10 @@ h6 {
 }
 .about-me p {
   margin: 5px;
+}
+.about-me ul {
+  margin: 5px;
+  padding-left: 20px;
 }
 
 .scs {

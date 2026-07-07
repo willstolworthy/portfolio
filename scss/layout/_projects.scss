@@ -26,7 +26,6 @@
 
 .project-item {
     box-sizing: border-box;
-    border: 1px solid variables.$body-border;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -79,4 +78,6 @@
     flex-direction: column;
     padding: 8px;
     min-height: 0;
+    border: 1px solid variables.$body-border;
+    border-top: none;
 }
