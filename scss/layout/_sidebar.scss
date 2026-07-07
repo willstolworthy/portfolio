@@ -1,7 +1,7 @@
 @use '../utilities/variables';
 @use '../utilities/mixins';
 
-.nav-toggle {
+.sidebar-toggle {
     display: none;
 }
 
@@ -28,7 +28,7 @@
     }
 }
 
-.nav-toggle:checked ~ .sidebar {
+.sidebar-toggle:checked ~ .sidebar {
     display: flex;
 }
 

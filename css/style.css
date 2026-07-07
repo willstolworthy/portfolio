@@ -402,7 +402,7 @@ h6 {
   background-color: #e2dbc8;
 }
 
-.nav-toggle {
+.sidebar-toggle {
   display: none;
 }
 
@@ -429,7 +429,7 @@ h6 {
   color: #52351e;
 }
 
-.nav-toggle:checked ~ .sidebar {
+.sidebar-toggle:checked ~ .sidebar {
   display: flex;
 }
 
