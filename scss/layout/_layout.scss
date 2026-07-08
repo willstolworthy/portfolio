@@ -22,3 +22,23 @@
 .body {
     background-color: variables.$body-main;
 }
+
+.return {
+    box-sizing: border-box;
+    text-align: center;
+    padding: 16px;
+
+    @include mixins.mq("medium") {
+        margin-left: 240px;
+        width: calc(100% - 240px);
+    }
+
+    a {
+        color: variables.$background-link-color;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

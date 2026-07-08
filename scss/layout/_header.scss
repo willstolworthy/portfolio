@@ -13,6 +13,8 @@
     background-position: center;
     background-attachment: fixed;
 
+    border-bottom: 1px solid variables.$body-border;
+
     @include mixins.mq("medium") {
         margin-left: 240px;
         width: calc(100% - 240px);
@@ -22,6 +24,16 @@
         margin-top: -300px;
         text-align: center;
         color: #fff;
+
+        @include mixins.mq("large") {
+            h1 {
+                font-size: 3rem;
+            }
+
+            p {
+                font-size: 1.5rem;
+            }
+        }
     }
 
     .scroll-down {

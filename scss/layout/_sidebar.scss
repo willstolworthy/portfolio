@@ -57,6 +57,7 @@
         font-family: variables.$font-logo;
         font-size: 4rem;
         color: variables.$button-dark;
+        transition: transform 0.2s ease;
 
         a {
             color: inherit;
@@ -119,6 +120,7 @@
         display: flex;
         color: variables.$background-link-color;
         font-size: 1.25rem;
+        transition: transform 0.2s ease;
 
         &:hover {
             text-decoration: none;
