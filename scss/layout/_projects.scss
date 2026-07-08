@@ -7,7 +7,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 16px;
-    padding: 32px 16px 16px;
+    padding: 16px;
     background-color: variables.$body-main;
 
     @include mixins.mq("medium") {
@@ -26,6 +26,7 @@
 
 .project-item {
     box-sizing: border-box;
+    position: relative;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -41,6 +42,17 @@
     &:hover .project-link-text {
         text-decoration: underline;
     }
+}
+
+.project-language {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 2px 8px;
+    font-size: 0.75rem;
+    color: variables.$text-color;
+    background-color: variables.$body-light;
+    border-radius: 3px;
 }
 
 .project-title {

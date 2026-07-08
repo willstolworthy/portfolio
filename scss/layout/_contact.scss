@@ -64,7 +64,7 @@
 .form-grid {
     flex: 1;
     display: grid;
-    grid-template-columns: 1fr; // stacked on mobile
+    grid-template-columns: 1fr;
     gap: 10px;
 
     @include mixins.mq("xlarge") {
