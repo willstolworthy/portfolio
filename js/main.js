@@ -6,6 +6,9 @@ if (document.querySelector('.title')) { // so it only works on index.html and i 
 
             new TypeIt('.subtitle', {
                 startDelay: 900,
+                afterComplete: function (instance) {
+                    instance.destroy();
+                },
             })
             .type("I'm a ")
             .type('<span class="subtitle-normal">Web Developer</span>')
@@ -14,7 +17,7 @@ if (document.querySelector('.title')) { // so it only works on index.html and i 
                 delay: 800,
                 instant: false
             })
-            .type('<strong>Web Developer</strong>')
+            .type('<strong>Web Developer.</strong>')
             .go();
         },
     }).go();
