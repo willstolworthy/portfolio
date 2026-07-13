@@ -1,10 +1,6 @@
 @use '../utilities/variables';
 @use '../utilities/mixins';
 
-.sidebar-toggle {
-    display: none;
-}
-
 .hamburger {
     align-items: center;
     justify-content: center;
@@ -15,25 +11,23 @@
     height: 40px;
     z-index: 3;
     background: transparent;
+    border: none;
+    padding: 0;
     cursor: pointer;
 
     @include mixins.mq("medium") {
         display: none;
     }
 
-    .icon-menu {
+    .icon-menu1 {
         font-size: 2rem;
         line-height: 1;
         color: variables.$background-link-color;
     }
 }
 
-.sidebar-toggle:checked ~ .sidebar {
-    display: flex;
-}
-
 .sidebar {
-    display: none;
+    display: flex;
     box-sizing: border-box;
     flex-direction: column;
     align-items: center;
@@ -46,9 +40,15 @@
     z-index: 2;
     background-color: variables.$body-background-color;
     box-shadow: inset -8px 0 8px -8px rgba(0, 0, 0, 0.4);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+
+    &.is-open {
+        transform: translateX(0);
+    }
 
     @include mixins.mq("medium") {
-        display: flex;
+        transform: translateX(0);
     }
 
     .logo {

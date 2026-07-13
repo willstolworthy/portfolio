@@ -354,8 +354,8 @@ h6 {
   content: "\e903";
 }
 
-.icon-menu:before {
-  content: "\e901";
+.icon-menu1:before {
+  content: "\e907";
 }
 
 .icon-arrow-right:before {
@@ -422,10 +422,6 @@ h6 {
   text-decoration: underline;
 }
 
-.sidebar-toggle {
-  display: none;
-}
-
 .hamburger {
   align-items: center;
   justify-content: center;
@@ -436,6 +432,8 @@ h6 {
   height: 40px;
   z-index: 3;
   background: transparent;
+  border: none;
+  padding: 0;
   cursor: pointer;
 }
 @media (min-width: 768px) {
@@ -443,18 +441,14 @@ h6 {
     display: none;
   }
 }
-.hamburger .icon-menu {
+.hamburger .icon-menu1 {
   font-size: 2rem;
   line-height: 1;
   color: #52351e;
 }
 
-.sidebar-toggle:checked ~ .sidebar {
-  display: flex;
-}
-
 .sidebar {
-  display: none;
+  display: flex;
   box-sizing: border-box;
   flex-direction: column;
   align-items: center;
@@ -467,10 +461,15 @@ h6 {
   z-index: 2;
   background-color: #c0a886;
   box-shadow: inset -8px 0 8px -8px rgba(0, 0, 0, 0.4);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+.sidebar.is-open {
+  transform: translateX(0);
 }
 @media (min-width: 768px) {
   .sidebar {
-    display: flex;
+    transform: translateX(0);
   }
 }
 .sidebar .logo {
