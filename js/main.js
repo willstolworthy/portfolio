@@ -1,3 +1,5 @@
+// typing effect
+
 if (document.querySelector('.title')) { // so it only works on index.html and i dont have to load CDN on all pages
     new TypeIt('.title', {
         strings: 'William Stolworthy',
@@ -23,6 +25,8 @@ if (document.querySelector('.title')) { // so it only works on index.html and i 
     }).go();
 }
 
+// hamburger menu sidebar
+
 const hamburger = document.querySelector('.hamburger');
 const sidebar = document.querySelector('.sidebar');
 
@@ -37,3 +41,33 @@ sidebar.querySelectorAll('.sidebar-nav a').forEach(function (link) {
         hamburger.setAttribute('aria-expanded', 'false');
     });
 });
+
+// form validation - replaces required html tag
+
+function showPopup(message, isValid) {
+  const popup = document.getElementById('form-popup');
+  popup.textContent = message;
+  popup.className = 'form-popup show ' + (isValid ? 'success' : 'error');
+
+  setTimeout(() => {
+    popup.className = 'form-popup'; // resets to hidden
+  }, 3000);
+}
+
+function validateEmail() {
+    document.querySelector('.form-submit').addEventListener('click', function(evt) {
+        const emailInput = document.getElementById('email').value;
+        const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (regex.test(emailInput)) { // returns true if match
+            evt.preventDefault();
+            document.getElementById('email').style.borderColor = 'green';
+            showPopup('Valid email!', true);
+        } else {
+            evt.preventDefault();
+            document.getElementById('email').style.borderColor = 'red';
+            showPopup('Please enter a valid email', false);
+        }
+    })  
+}
+
+validateEmail();

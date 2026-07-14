@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div id="form-popup" class="form-popup"></div>
     <button type="button" class="hamburger" aria-label="Toggle sidebar" aria-expanded="false" aria-controls="sidebar">
         <span class="icon-menu1"></span>
     </button>
@@ -129,14 +130,14 @@
                 <p>Alternatively contact me via my Email or Mobile Number.</p>
             </div>
             <div class="contact-form">
-                <form class="form-grid">
-                    <input type="text" class="form form-first-name" placeholder="First Name*" required>
-                    <input type="text" class="form form-last-name" placeholder="Last Name*" required>
-                    <input type="email" class="form form-email" placeholder="Email Address*" required>
+                <form class="form-grid" novalidate>
+                    <input type="text" class="form form-first-name" placeholder="First Name*">
+                    <input type="text" class="form form-last-name" placeholder="Last Name*">
+                    <input type="email" class="form form-email" placeholder="Email Address*" id="email">
                     <input type="text" class="form form-subject" placeholder="Subject">
                     <textarea class="form form-message" placeholder="Message"></textarea>
+                    <button type="submit" class="btn form-submit">Submit</button>
                 </form>
-                <button type="submit" class="btn form-submit">Submit</button>
             </div>
         </div>
     </div>

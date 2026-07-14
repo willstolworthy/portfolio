@@ -422,6 +422,28 @@ h6 {
   text-decoration: underline;
 }
 
+.form-popup {
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  opacity: 0;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+.form-popup.show {
+  opacity: 1;
+}
+.form-popup.success {
+  background: green;
+  color: #fff;
+}
+.form-popup.error {
+  background: red;
+  color: #fff;
+}
+
 .hamburger {
   align-items: center;
   justify-content: center;
