@@ -71,3 +71,31 @@ function validateEmail() {
 }
 
 validateEmail();
+
+// carousel
+
+$(document).ready(function(){
+  $('.projects').slick({
+    dots: true,
+    arrows: false,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    autoplay: true,
+    responsive: [
+      {
+        breakpoint: 1259, // just under $breakpoint-xlarge (1260px)
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        }
+      },
+      {
+        breakpoint: 767, // just under $breakpoint-medium (768px)
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }
+    ]
+  });
+});

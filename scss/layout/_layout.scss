@@ -54,6 +54,10 @@
     padding: 10px 15px;
     border-radius: 5px;
 
+    @include mixins.mq("medium") {
+        left: calc(240px + (100% - 240px) / 2);
+    }
+
     &.show {
         opacity: 1;
     }
