@@ -45,57 +45,75 @@ sidebar.querySelectorAll('.sidebar-nav a').forEach(function (link) {
 // form validation - replaces required html tag
 
 function showPopup(message, isValid) {
-  const popup = document.getElementById('form-popup');
-  popup.textContent = message;
-  popup.className = 'form-popup show ' + (isValid ? 'success' : 'error');
+    const popup = document.getElementById('form-popup');
+    popup.textContent = message;
+    popup.className = 'form-popup show ' + (isValid ? 'success' : 'error');
 
-  setTimeout(() => {
-    popup.className = 'form-popup'; // resets to hidden
-  }, 3000);
+    setTimeout(() => {
+      popup.className = 'form-popup'; // resets to hidden
+    }, 3000);
 }
 
-function validateEmail() {
+function validateForm() {
     document.querySelector('.form-submit').addEventListener('click', function(evt) {
+        evt.preventDefault();
+
+        const requiredFields = document.querySelectorAll('.form.required');
+        let requiredTrue = true; // starts as true
+
+        requiredFields.forEach(function (field) {
+            if (field.value.trim() === '') { // strips whitespace
+                field.style.borderColor = 'red';
+                requiredTrue = false; 
+            } else {
+                field.style.borderColor = 'green';
+            }
+        });
+
+        if (!requiredTrue) { // if NOT true
+            showPopup('Please fill out all required fields', false);
+            return; // if empty, return and skip email check
+        }
+
         const emailInput = document.getElementById('email').value;
         const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (regex.test(emailInput)) { // returns true if match
-            evt.preventDefault();
             document.getElementById('email').style.borderColor = 'green';
-            showPopup('Valid email!', true);
+            showPopup('Message sent!', true);
         } else {
-            evt.preventDefault();
             document.getElementById('email').style.borderColor = 'red';
             showPopup('Please enter a valid email', false);
         }
-    })  
+    })
 }
 
-validateEmail();
+
+validateForm();
 
 // carousel
 
 $(document).ready(function(){
-  $('.projects').slick({
-    dots: true,
-    arrows: false,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    autoplay: true,
-    responsive: [
-      {
-        breakpoint: 1259, // just under $breakpoint-xlarge (1260px)
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        }
-      },
-      {
-        breakpoint: 767, // just under $breakpoint-medium (768px)
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        }
-      }
-    ]
-  });
+    $('.projects').slick({
+        dots: true,
+        arrows: false,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        autoplay: true,
+        responsive: [
+            {
+                breakpoint: 1259, // just under $breakpoint-xlarge (1260px)
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                }
+            },
+            {
+                breakpoint: 767, // just under $breakpoint-medium (768px)
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
+    });
 });
