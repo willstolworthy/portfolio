@@ -1,19 +1,47 @@
 @use '../utilities/variables';
 @use '../utilities/mixins';
 
+.project-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    box-sizing: border-box;
+    margin-top: 30px;
+    padding: 0 16px;
+
+    @include mixins.sidebar-offset;
+}
+
+.project-filter {
+    padding: 6px 14px;
+    font: inherit;
+    font-size: 0.85rem;
+    color: variables.$text-color;
+    background-color: variables.$body-light;
+    border: 1px solid variables.$body-border;
+    border-radius: 3px;
+    cursor: pointer;
+
+    &.is-active {
+        color: white;
+        background-color: variables.$link-color;
+        border-color: variables.$link-color;
+    }
+}
+
 .projects {
     box-sizing: border-box;
     height: auto;
     padding: 16px;
-    margin-top: 30px;
+    margin-top: 12px;
     background-color: variables.$body-main;
 
     @include mixins.sidebar-offset;
 
     .slick-list {
         margin: 0 -8px;
-        padding-top: 8px; // room for the project-item hover translateY, so slick's overflow: hidden doesn't clip it
-        padding-bottom: 28px; // room for the hover box-shadow (8px offset + 16px blur), so it isn't clipped
+        padding-top: 8px; // stop clipping
+        padding-bottom: 28px;
     }
 
     .slick-dots {
@@ -25,7 +53,7 @@
 .project-item {
     box-sizing: border-box;
     position: relative;
-    display: flex !important; // slick sets its slides to display: block inline, override so our flex column layout still applies
+    display: flex !important; // slick sets its slides to display: block need to override
     flex-direction: column;
     overflow: hidden;
     height: 280px;

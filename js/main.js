@@ -90,6 +90,22 @@ function validateForm() {
 
 validateForm();
 
+// copy to clipboard
+
+document.querySelectorAll('.copy-icon').forEach(function (button) {
+    button.addEventListener('click', function () {
+        const value = button.dataset.copy;
+        const tooltip = button.querySelector('.copy-tooltip');
+
+        navigator.clipboard.writeText(value).then(function () {
+            tooltip.classList.add('show');
+            setTimeout(function () {
+                tooltip.classList.remove('show');
+            }, 1500);
+        });
+    });
+});
+
 // carousel
 
 $(document).ready(function(){
@@ -101,19 +117,34 @@ $(document).ready(function(){
         autoplay: true,
         responsive: [
             {
-                breakpoint: 1259, // just under $breakpoint-xlarge (1260px)
+                breakpoint: 1259, // $breakpoint-xlarge (1260px)
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2,
                 }
             },
             {
-                breakpoint: 767, // just under $breakpoint-medium (768px)
+                breakpoint: 767, // $breakpoint-medium (768px)
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                 }
             }
         ]
+    });
+
+    // project language filter included with slick
+    $('.project-filters').on('click', '.project-filter', function () {
+        const filter = $(this).data('filter');
+
+        $('.project-filters .project-filter').removeClass('is-active');
+        $(this).addClass('is-active');
+
+        // always unfilter back to showing all
+        $('.projects').slick('slickUnfilter');
+
+        if (filter !== 'all') {
+            $('.projects').slick('slickFilter', '[data-language="' + filter + '"]');
+        }
     });
 });

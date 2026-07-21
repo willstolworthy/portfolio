@@ -31,8 +31,52 @@
         }
     }
 
+    .icon {
+        margin-right: 10px;
+    }
+
     @include mixins.mq("xlarge") {
         width: 40%;
+    }
+}
+
+.copy-icon {
+    position: relative;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-right: 10px;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+
+    .icon {
+        margin-right: 0;
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.copy-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    margin-bottom: 6px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: #605443;
+    color: #fff;
+    font-size: 0.75rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+
+    &.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
     }
 }
 
@@ -68,12 +112,12 @@
     width: 6rem;
     border-radius: 4px;
     transition: background-color 0.2s ease, transform 0.15s ease;
+    background-color: #605443;
+    border-color: #605443;
 
     &:hover {
-        background-color: #7e6e58;
-        border-color: #7e6e58;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
-        transform: translateY(-1px);
+        transform: translateY(-2px);
     }
 }
 
