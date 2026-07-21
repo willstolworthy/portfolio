@@ -741,6 +741,7 @@ h6 {
   min-height: 0;
   border: 1px solid #94866d;
   border-top: none;
+  border-radius: 0 0 4px 4px;
 }
 
 .contact-section {
