@@ -14,10 +14,7 @@
     border-bottom: 1px solid variables.$body-border;
     margin-bottom: 16px;
 
-    @include mixins.mq("medium") {
-        margin-left: 240px;
-        width: calc(100% - 240px);
-    }
+    @include mixins.sidebar-offset;
 
     .name {
         margin-top: -300px;

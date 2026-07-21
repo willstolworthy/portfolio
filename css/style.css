@@ -836,6 +836,7 @@ h6 {
   padding: 16px;
   background-color: #d8ccb4;
   border: 1px solid #7e6e58;
+  border-radius: 4px;
 }
 .about-me h1,
 .about-me h2,
@@ -873,6 +874,7 @@ h6 {
   padding: 16px;
   background-color: #d8ccb4;
   border: 1px solid #7e6e58;
+  border-radius: 4px;
 }
 .scs-scheme h1,
 .scs-scheme h2,
@@ -910,14 +912,15 @@ h6 {
 .coding-examples {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   box-sizing: border-box;
   width: 85%;
-  min-height: 40vh;
   padding: 16px;
   background-color: #d8ccb4;
   border: 1px solid #7e6e58;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
 }
 
 /*# sourceMappingURL=style.css.map */

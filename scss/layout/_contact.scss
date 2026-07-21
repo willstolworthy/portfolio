@@ -2,30 +2,12 @@
 @use '../utilities/mixins';
 
 .contact-section {
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 40vh;
-    padding: 16px;
-
-    @include mixins.mq("medium") {
-        margin-left: 240px;
-        width: calc(100% - 240px);
-    }
+    @include mixins.page-styling;
 }
 
 .contact {
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    width: 85%;
-    padding: 16px;
-    background-color: variables.$body-light;
-    border: 1px solid #7e6e58;
-    border-radius: 4px;
+    @include mixins.card-styling;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-
 
     @include mixins.mq("xlarge") {
         flex-direction: row;

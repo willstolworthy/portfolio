@@ -21,3 +21,38 @@
         }
     }
 }
+
+// offsets content past the sidebar once it's docked (medium breakpoint up)
+
+@mixin sidebar-offset {
+    @include mq("medium") {
+        margin-left: variables.$sidebar-width;
+        width: calc(100% - #{variables.$sidebar-width});
+    }
+}
+
+// full-height centered hero section, offset past the docked sidebar
+
+@mixin page-styling {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40vh;
+    padding: 16px;
+
+    @include sidebar-offset;
+}
+
+// content card sitting inside a page-styling section
+
+@mixin card-styling {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 85%;
+    padding: 16px;
+    background-color: variables.$body-light;
+    border: 1px solid #7e6e58;
+    border-radius: 4px;
+}
