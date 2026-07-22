@@ -52,7 +52,7 @@
     border-radius: 5px;
 
     @include mixins.mq("medium") {
-        left: calc(#{variables.$sidebar-width} + (100% - #{variables.$sidebar-width}) / 2);
+        left: calc(var(--sidebar-width) + (100% - var(--sidebar-width)) / 2);
     }
 
     &.show {

@@ -26,8 +26,8 @@
 
 @mixin sidebar-offset {
     @include mq("medium") {
-        margin-left: variables.$sidebar-width;
-        width: calc(100% - #{variables.$sidebar-width});
+        margin-left: var(--sidebar-width);
+        width: calc(100% - var(--sidebar-width));
     }
 }
 

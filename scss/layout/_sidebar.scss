@@ -1,6 +1,21 @@
 @use '../utilities/variables';
 @use '../utilities/mixins';
 
+// Responsive sidebar width. The sidebar and every content offset
+// (mixins.sidebar-offset) both read this custom property, so they stay in sync
+// as it scales up across breakpoints.
+:root {
+    --sidebar-width: #{variables.$sidebar-width-small};
+
+    @include mixins.mq("large") {
+        --sidebar-width: #{variables.$sidebar-width-large};
+    }
+
+    @include mixins.mq("xlarge") {
+        --sidebar-width: #{variables.$sidebar-width};
+    }
+}
+
 .hamburger {
     align-items: center;
     justify-content: center;
@@ -34,7 +49,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: variables.$sidebar-width;
+    width: var(--sidebar-width);
     height: 100%;
     padding: 10px;
     z-index: 2;

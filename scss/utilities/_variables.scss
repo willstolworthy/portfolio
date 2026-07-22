@@ -7,7 +7,13 @@ $breakpoint-xlarge: 1260px;
 
 // Layout
 
-$sidebar-width: 240px;
+// Sidebar narrows on smaller viewports so it doesn't crowd the content. These
+// feed the responsive --sidebar-width custom property (see _sidebar.scss), which
+// both the sidebar and the content offset (mixins.sidebar-offset) read — keeping
+// the two in sync at every breakpoint.
+$sidebar-width: 240px; // xlarge (1260px+) — widest
+$sidebar-width-large: 220px; // large (992px+)
+$sidebar-width-small: 200px; // default: mobile drawer + medium (768px+) docked
 
 // Fonts
 
