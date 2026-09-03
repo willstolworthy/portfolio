@@ -433,6 +433,9 @@ h6 {
   opacity: 0;
   padding: 10px 15px;
   border-radius: 5px;
+  max-width: 90%;
+  text-align: center;
+  white-space: pre-line;
 }
 @media (min-width: 768px) {
   .form-popup {

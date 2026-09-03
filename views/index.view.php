@@ -1,45 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="icon" href="img/favicon.ico" sizes="32x32">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="js/slick/slick-theme.css"/>
-
-</head>
-<body>
+<?php $title = 'William Stolworthy | Web Developer'; ?>
+<?php $isHome = true; // loads the carousel and typing effect ?>
+<?php include __DIR__ . '/partials/head.php'; ?>
     <div id="form-popup" class="form-popup"></div>
-    <button type="button" class="hamburger" aria-label="Toggle sidebar" aria-expanded="false" aria-controls="sidebar">
-        <span class="icon-menu1"></span>
-    </button>
-    <div class="sidebar" id="sidebar">
-        <h1 class="logo"><a href="/">WS</a></h1>
-        <nav class="sidebar-nav">
-            <h4>Navigation</h4>
-            <a href="/about">About Me</a>
-            <a href="/#projects">My Portfolio</a>
-            <a href="/coding">Coding Examples</a>
-            <a href="/scs">SCS Scheme</a>
-            <h4 class="contact-heading"><a href="/#contact">Contact Me</a></h4>
-            <div class="socials">
-                <a href="https://github.com/willstolworthy" target="_blank" class="social-link" aria-label="GitHub">
-                    <span class="icon-github"></span>
-                </a>
-                <a href="tel:07783066519" class="social-link" aria-label="Phone">
-                    <span class="icon-phone1"></span>
-                </a>
-                <a href="mailto:willstolly@gmail.com" target="_blank" class="social-link" aria-label="Email">
-                    <span class="icon-email"></span>
-                </a>
-            </div>
-        </nav>
-    </div>
+<?php include __DIR__ . '/partials/sidebar.php'; ?>
     <div class="header">
         <div class="name">
             <h1>My Name is <span class="title"></span></h1>
@@ -157,7 +120,7 @@
                     <input type="text" name="last_name" class="form form-last-name required" placeholder="Last Name*" maxlength="100">
                     <input type="email" name="email" class="form form-email required" placeholder="Email Address*" id="email" maxlength="254">
                     <input type="text" name="subject" class="form form-subject" placeholder="Subject" maxlength="150">
-                    <textarea name="message" class="form form-message" placeholder="Message"></textarea>
+                    <textarea name="message" class="form form-message" placeholder="Message" maxlength="5000"></textarea>
                     <button type="submit" class="btn form-submit">Submit</button>
                 </form>
             </div>
@@ -166,20 +129,4 @@
     <div class="return">
         <a href="#">Return to Top</a>
     </div>
-    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/typeit@8.8.7/dist/index.umd.js"></script>
-    <script>
-        // jQuery 4.0 removed $.type(), which the unmaintained Slick carousel still calls internally. had to use ai to fix
-        if (!$.type) {
-            $.type = function (obj) {
-                if (obj == null) return obj + '';
-                return typeof obj === 'object' || typeof obj === 'function'
-                    ? (Object.prototype.toString.call(obj).match(/^\[object (.+)\]$/)[1].toLowerCase())
-                    : typeof obj;
-            };
-        }
-    </script>
-    <script type="text/javascript" src="js/slick/slick.min.js"></script>
-    <script src="js/main.js"></script>
-</body>
-</html>
+<?php include __DIR__ . '/partials/footer.php'; ?>

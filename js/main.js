@@ -63,6 +63,8 @@ function validateForm() {
     form.addEventListener('submit', async function(evt) {
         evt.preventDefault();
 
+        const messages = []; // collected so every problem is shown at once
+
         const requiredFields = document.querySelectorAll('.form.required');
         let requiredTrue = true; // starts as true
 
@@ -76,20 +78,23 @@ function validateForm() {
         });
 
         if (!requiredTrue) { // if NOT true
-            showPopup('Please fill out all required fields', false);
-            return; // if empty, return and skip email check
+            messages.push('Please fill out all required fields');
         }
 
-        const emailInput = document.getElementById('email').value;
+        // checked even when a field above is empty, so both errors can show together
+        const emailField = document.getElementById('email');
         const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        if (!regex.test(emailInput)) { // returns true if match
-            document.getElementById('email').style.borderColor = 'red';
-            showPopup('Please enter a valid email', false);
-            return; // stop before hitting the server with an address it will only reject
+        if (emailField.value.trim() !== '' && !regex.test(emailField.value)) { // returns true if match
+            emailField.style.borderColor = 'red';
+            messages.push('Please enter a valid email');
         }
-        document.getElementById('email').style.borderColor = 'green';
 
-        // the client checks above are only a courtesy, contact.php validates again
+        if (messages.length) {
+            showPopup(messages.join('\n'), false);
+            return; // stop before hitting the server with input it will only reject
+        }
+
+        // contact.php validates again
         submitBtn.disabled = true;
         try {
             const response = await fetch(form.action, {
@@ -106,6 +111,12 @@ function validateForm() {
                 // clear the green borders so the blank form doesn't look validated
                 document.querySelectorAll('.form').forEach(function (field) {
                     field.style.borderColor = '';
+                });
+            } else if (result.errors) {
+                // the keys match the name attributes, so mark every rejected field at once
+                Object.keys(result.errors).forEach(function (name) {
+                    const field = form.querySelector('[name="' + name + '"]');
+                    if (field) field.style.borderColor = 'red';
                 });
             }
         } catch (err) {

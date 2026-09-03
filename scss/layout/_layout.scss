@@ -50,6 +50,9 @@
     opacity: 0;
     padding: 10px 15px;
     border-radius: 5px;
+    max-width: 90%;
+    text-align: center;
+    white-space: pre-line; // keeps the line break between stacked error messages
 
     @include mixins.mq("medium") {
         left: calc(var(--sidebar-width) + (100% - var(--sidebar-width)) / 2);
