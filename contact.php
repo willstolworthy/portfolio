@@ -1,5 +1,7 @@
 <?php
 
+use PHPMailer\PHPMailer\PHPMailer;
+
 require __DIR__ . "/database.php";
 
 header('Content-Type: application/json; charset=utf-8');
@@ -18,29 +20,28 @@ $input = [];
 foreach ($fields as $field) {
     $value = (string) ($_POST[$field] ?? '');
 
-    // anything that is not valid utf-8 cannot be measured or stored safely, so drop it
-    // and let the checks below report it as missing
+    // drop anything that isnt utf-8
     if (!mb_check_encoding($value, 'UTF-8')) {
         $value = '';
     }
 
-    // strip control characters, keeping tab / newline / carriage return for the message
+    // strip control characters
     $value = preg_replace('/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/u', '', $value);
 
     $input[$field] = trim($value);
 }
 
-// the message is the only multi line field, normalise its line endings
+// normalise line endings
 $input['message'] = preg_replace('/\R/u', "\n", $input['message']);
 
-// everything else is single line, so collapse any run of whitespace to one space
+// collaps multiple whitespace to one space
 foreach (['first_name', 'last_name', 'email', 'subject'] as $field) {
     $input[$field] = preg_replace('/\s+/u', ' ', $input[$field]);
 }
 
 $errors = [];
 
-// the lengths match the columns. mysql rejects anything longer
+// reject anything longer than the length of the column
 
 if ($input['first_name'] === '') {
     $errors['first_name'] = 'Please enter your first name.';
@@ -101,6 +102,42 @@ try {
         'message' => $debug ? $e->getMessage() : 'Sorry, something went wrong. Please try again.',
     ]);
     exit;
+}
+
+$submissionId = $pdo->lastInsertId();
+
+try {
+    $mail = new PHPMailer(true);
+
+    $mail->isSMTP();
+    $mail->Host       = $_ENV['SMTP_HOST'];
+    $mail->Port       = (int) $_ENV['SMTP_PORT'];
+    $mail->SMTPAuth   = true;
+    $mail->Username   = $_ENV['SMTP_USER'];
+    $mail->Password   = $_ENV['SMTP_PASS'];
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Timeout    = 10; // timeout so it doesnt hang
+    $mail->CharSet    = 'UTF-8';
+
+    $mail->setFrom($_ENV['SMTP_FROM'], 'Portfolio Contact Form');
+    $mail->addAddress($_ENV['SMTP_TO']);
+
+    // reply should actually reply to the sender, maybe
+    $mail->addReplyTo($input['email'], $input['first_name'] . ' ' . $input['last_name']);
+
+    $subject = $input['subject'] !== '' ? $input['subject'] : '(no subject)';
+
+    $mail->Subject = 'Portfolio contact form: ' . $subject;
+    $mail->Body    = "New submission (#{$submissionId})\n\n"
+                   . "Name:    {$input['first_name']} {$input['last_name']}\n"
+                   . "Email:   {$input['email']}\n"
+                   . "Subject: {$subject}\n\n"
+                   . "Message:\n"
+                   . ($input['message'] !== '' ? $input['message'] : '(none)') . "\n";
+
+    $mail->send();
+} catch (\Throwable $e) {
+    error_log('Contact email failed: ' . $e->getMessage());
 }
 
 echo json_encode(['ok' => true, 'message' => 'Message sent!']);
