@@ -1,4 +1,5 @@
 <?php $title = 'SCS Scheme | William Stolworthy'; ?>
+<?php $description = 'What the Netmatters Scion Coalition Scheme involves, how Treehouse fits into the training, and my progress through it as a trainee web developer.'; ?>
 <?php include __DIR__ . '/partials/head.php'; ?>
 <?php include __DIR__ . '/partials/sidebar.php'; ?>
     <div class="scs">
@@ -6,29 +7,29 @@
             <h1>
                 SCS Scheme
             </h1>
-            <h3>
+            <h2>
                 Introduction to Scion Coalition Scheme
-            </h3>
+            </h2>
             <p>
                 The Scion Coalition Scheme is an intensive, specially tailored training program run by Netmatters in order to give willing candidates the opportunity to enter the industry as web developers.
                 Under the supervision of senior web developers, scions generally aim to complete training within six to nine months. The course is intensive and therefore the level of learning achieved is extensive in a short space of time.
             </p>
-            <h3>
+            <h2>
                 Treehouse
-            </h3>
+            </h2>
             <p>
                 Treehouse is an online learning community, featuring videos covering a number of topics from basic HTML to C# programming, iOS development, data analysis, and more.
                 By completing courses users can earn points, allowing them to track their progress and see how much they've covered in certain areas.
             </p>
-            <h4>
+            <h3>
                 Total Score
-            </h4>
+            </h3>
             <a href="https://teamtreehouse.com/profiles/williamstolworth" target="_blank">
                 teamtreehouse.com/williamstolworth
             </a>
-            <h3>
+            <h2>
                 About Netmatters
-            </h3>
+            </h2>
             <p>
                 Established in 2008<br>
                 Norfolk's leading technology company<br>

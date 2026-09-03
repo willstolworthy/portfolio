@@ -2,7 +2,7 @@
         <span class="icon-menu1"></span>
     </button>
     <div class="sidebar" id="sidebar">
-        <h1 class="logo"><a href="/">WS</a></h1>
+        <div class="logo"><a href="/">WS</a></div>
         <nav class="sidebar-nav">
             <h4>Navigation</h4>
             <a href="/about">About Me</a>

@@ -593,6 +593,7 @@ h6 {
   align-items: center;
   justify-content: center;
   background-image: url(../img/banner.jpg);
+  background-image: image-set(url(../img/banner.webp) type("image/webp"), url(../img/banner.jpg) type("image/jpeg"));
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -796,6 +797,12 @@ h6 {
 .contact-details {
   width: 100%;
 }
+.contact-details h2 {
+  font-size: 1.17em;
+}
+.contact-details h3 {
+  font-size: 1em;
+}
 .contact-details a {
   color: inherit;
   text-decoration: none;
@@ -974,6 +981,12 @@ h6 {
 .scs-scheme p,
 .scs-scheme a {
   margin: 10px;
+}
+.scs-scheme h2 {
+  font-size: 1.17em;
+}
+.scs-scheme h3 {
+  font-size: 1em;
 }
 .scs-scheme a {
   display: inline-block;

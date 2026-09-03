@@ -17,6 +17,16 @@
 .contact-details {
     width: 100%;
 
+    // headings were promoted a level for valid document outline (h1 > h2 > h3),
+    // these keep the original sizes - drop them to let the visual hierarchy match
+    h2 {
+        font-size: 1.17em;
+    }
+
+    h3 {
+        font-size: 1em;
+    }
+
     a {
         color: inherit;
         text-decoration: none;

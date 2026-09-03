@@ -1,4 +1,5 @@
 <?php $title = 'William Stolworthy | Web Developer'; ?>
+<?php $description = 'Portfolio of William Stolworthy, a trainee web developer in Norfolk building responsive sites with HTML, CSS, Sass, JavaScript and PHP. Currently enrolled on the Netmatters Scion Coalition Scheme. See my projects and get in touch.'; ?>
 <?php $isHome = true; // loads the carousel and typing effect ?>
 <?php include __DIR__ . '/partials/head.php'; ?>
     <div id="form-popup" class="form-popup"></div>
@@ -24,7 +25,7 @@
             <img class="project-image" src="img/placeholder.png" alt="Screenshot of Project 1">
             <span class="project-language">JavaScript</span>
             <div class="project-content">
-                <h3 class="project-title">Project One</h3>
+                <h2 class="project-title">Project One</h2>
                 <p class="project-description">Project one description.</p>
                 <span class="project-link">
                     <span class="project-link-text">View Project</span>
@@ -36,7 +37,7 @@
             <img class="project-image" src="img/placeholder.png" alt="Screenshot of Project 2">
             <span class="project-language">Python</span>
             <div class="project-content">
-                <h3 class="project-title">Project Two</h3>
+                <h2 class="project-title">Project Two</h2>
                 <p class="project-description">Project two description.</p>
                 <span class="project-link">
                     <span class="project-link-text">View Project</span>
@@ -48,7 +49,7 @@
             <img class="project-image" src="img/placeholder.png" alt="Screenshot of Project 3">
             <span class="project-language">HTML/CSS</span>
             <div class="project-content">
-                <h3 class="project-title">Project Three</h3>
+                <h2 class="project-title">Project Three</h2>
                 <p class="project-description">Project three description.</p>
                 <span class="project-link">
                     <span class="project-link-text">View Project</span>
@@ -60,7 +61,7 @@
             <img class="project-image" src="img/placeholder.png" alt="Screenshot of Project 4">
             <span class="project-language">JavaScript</span>
             <div class="project-content">
-                <h3 class="project-title">Project Four</h3>
+                <h2 class="project-title">Project Four</h2>
                 <p class="project-description">Project four description.</p>
                 <span class="project-link">
                     <span class="project-link-text">View Project</span>
@@ -72,7 +73,7 @@
             <img class="project-image" src="img/placeholder.png" alt="Screenshot of Project 5">
             <span class="project-language">Python</span>
             <div class="project-content">
-                <h3 class="project-title">Project Five</h3>
+                <h2 class="project-title">Project Five</h2>
                 <p class="project-description">Project five description.</p>
                 <span class="project-link">
                     <span class="project-link-text">View Project</span>
@@ -84,7 +85,7 @@
             <img class="project-image" src="img/placeholder.png" alt="Screenshot of Project 6">
             <span class="project-language">HTML/CSS</span>
             <div class="project-content">
-                <h3 class="project-title">Project Six</h3>
+                <h2 class="project-title">Project Six</h2>
                 <p class="project-description">Project six description.</p>
                 <span class="project-link">
                     <span class="project-link-text">View Project</span>
@@ -96,22 +97,22 @@
     <div class="contact-section" id="contact">
         <div class="contact">
             <div class="contact-details">
-                <h3>Get In Touch</h3>
+                <h2>Get In Touch</h2>
                 <p>If you wish to contact me for any reason, please fill out this form.</p>
-                <h4 class="contact-details__phone">
+                <h3 class="contact-details__phone">
                     <button type="button" class="copy-icon" data-copy="07783066519" aria-label="Copy phone number">
                         <span class="icon icon-content_paste"></span>
                         <span class="copy-tooltip">Copied!</span>
                     </button>
-                    <a href="tel:07783066519" target:"_blank">07783 066519</a>
-                </h4>
-                <h4 class="contact-details__email">
+                    <a href="tel:07783066519">07783 066519</a>
+                </h3>
+                <h3 class="contact-details__email">
                     <button type="button" class="copy-icon" data-copy="willstolly@gmail.com" aria-label="Copy email address">
                         <span class="icon icon-content_paste"></span>
                         <span class="copy-tooltip">Copied!</span>
                     </button>
-                    <a href="mailto:willstolly@gmail.com" target:"_blank">willstolly@gmail.com</a>
-                </h4>
+                    <a href="mailto:willstolly@gmail.com">willstolly@gmail.com</a>
+                </h3>
                 <p>Alternatively contact me via my Email or Mobile Number.</p>
             </div>
             <div class="contact-form">

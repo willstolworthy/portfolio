@@ -1,4 +1,5 @@
 <?php $title = 'Coding Examples | William Stolworthy'; ?>
+<?php $description = 'Coding examples from William Stolworthy, trainee web developer. Examples in HTML, CSS, Sass, JavaScript and PHP.'; ?>
 <?php include __DIR__ . '/partials/head.php'; ?>
 <?php include __DIR__ . '/partials/sidebar.php'; ?>
     <div class="coding">

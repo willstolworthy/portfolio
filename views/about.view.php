@@ -1,4 +1,5 @@
 <?php $title = 'About Me | William Stolworthy'; ?>
+<?php $description = 'About William Stolworthy, a trainee web developer studying on the Netmatters Scion Coalition Scheme, with skills in HTML, CSS, Sass and PHP.'; ?>
 <?php include __DIR__ . '/partials/head.php'; ?>
 <?php include __DIR__ . '/partials/sidebar.php'; ?>
     <div class="about">
