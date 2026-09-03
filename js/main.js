@@ -55,7 +55,12 @@ function showPopup(message, isValid) {
 }
 
 function validateForm() {
-    document.querySelector('.form-submit').addEventListener('click', function(evt) {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+
+    const submitBtn = form.querySelector('.form-submit');
+
+    form.addEventListener('submit', async function(evt) {
         evt.preventDefault();
 
         const requiredFields = document.querySelectorAll('.form.required');
@@ -64,7 +69,7 @@ function validateForm() {
         requiredFields.forEach(function (field) {
             if (field.value.trim() === '') { // strips whitespace
                 field.style.borderColor = 'red';
-                requiredTrue = false; 
+                requiredTrue = false;
             } else {
                 field.style.borderColor = 'green';
             }
@@ -77,12 +82,36 @@ function validateForm() {
 
         const emailInput = document.getElementById('email').value;
         const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        if (regex.test(emailInput)) { // returns true if match
-            document.getElementById('email').style.borderColor = 'green';
-            showPopup('Message sent!', true);
-        } else {
+        if (!regex.test(emailInput)) { // returns true if match
             document.getElementById('email').style.borderColor = 'red';
             showPopup('Please enter a valid email', false);
+            return; // stop before hitting the server with an address it will only reject
+        }
+        document.getElementById('email').style.borderColor = 'green';
+
+        // the client checks above are only a courtesy, contact.php validates again
+        submitBtn.disabled = true;
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: new FormData(form),
+            });
+            const result = await response.json();
+
+            showPopup(result.message, result.ok);
+
+            if (result.ok) {
+                form.reset();
+                // clear the green borders so the blank form doesn't look validated
+                document.querySelectorAll('.form').forEach(function (field) {
+                    field.style.borderColor = '';
+                });
+            }
+        } catch (err) {
+            showPopup('Sorry, something went wrong. Please try again.', false);
+        } finally {
+            submitBtn.disabled = false;
         }
     })
 }

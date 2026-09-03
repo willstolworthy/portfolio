@@ -1,0 +1,23 @@
+# Never serve dotfiles (.env, .git, etc.) over HTTP
+<FilesMatch "^\.">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # 1. Bounce /page.php to /page so there's only one real URL
+    RewriteCond %{REQUEST_METHOD} =GET
+    RewriteCond %{THE_REQUEST} \s/+([^?\s]+)\.php[\s?]
+    RewriteRule ^ /%1 [R=301,L]
+
+    # 2. Serve /page from page.php, but only if that file exists
+    RewriteCond %{REQUEST_FILENAME}.php -f
+    RewriteRule ^(.+?)/?$ $1.php [L]
+</IfModule>

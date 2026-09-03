@@ -19,14 +19,14 @@
         <span class="icon-menu1"></span>
     </button>
     <div class="sidebar" id="sidebar">
-        <h1 class="logo"><a href="index.html">WS</a></h1>
+        <h1 class="logo"><a href="/">WS</a></h1>
         <nav class="sidebar-nav">
             <h4>Navigation</h4>
-            <a href="about.html">About Me</a>
-            <a href="index.html#projects">My Portfolio</a>
-            <a href="coding.html">Coding Examples</a>
-            <a href="scs.html">SCS Scheme</a>
-            <h4 class="contact-heading"><a href="index.html#contact">Contact Me</a></h4>
+            <a href="/about">About Me</a>
+            <a href="/#projects">My Portfolio</a>
+            <a href="/coding">Coding Examples</a>
+            <a href="/scs">SCS Scheme</a>
+            <h4 class="contact-heading"><a href="/#contact">Contact Me</a></h4>
             <div class="socials">
                 <a href="https://github.com/willstolworthy" target="_blank" class="social-link" aria-label="GitHub">
                     <span class="icon-github"></span>
@@ -152,12 +152,12 @@
                 <p>Alternatively contact me via my Email or Mobile Number.</p>
             </div>
             <div class="contact-form">
-                <form class="form-grid" novalidate>
-                    <input type="text" class="form form-first-name required" placeholder="First Name*">
-                    <input type="text" class="form form-last-name required" placeholder="Last Name*">
-                    <input type="email" class="form form-email required" placeholder="Email Address*" id="email">
-                    <input type="text" class="form form-subject" placeholder="Subject">
-                    <textarea class="form form-message" placeholder="Message"></textarea>
+                <form class="form-grid" id="contact-form" method="post" action="/contact" novalidate>
+                    <input type="text" name="first_name" class="form form-first-name required" placeholder="First Name*" maxlength="100">
+                    <input type="text" name="last_name" class="form form-last-name required" placeholder="Last Name*" maxlength="100">
+                    <input type="email" name="email" class="form form-email required" placeholder="Email Address*" id="email" maxlength="254">
+                    <input type="text" name="subject" class="form form-subject" placeholder="Subject" maxlength="150">
+                    <textarea name="message" class="form form-message" placeholder="Message"></textarea>
                     <button type="submit" class="btn form-submit">Submit</button>
                 </form>
             </div>

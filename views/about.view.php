@@ -15,14 +15,14 @@
         <span class="icon-menu1"></span>
     </button>
     <div class="sidebar">
-        <h1 class="logo"><a href="index.html">WS</a></h1>
+        <h1 class="logo"><a href="/">WS</a></h1>
         <nav class="sidebar-nav">
             <h4>Navigation</h4>
             <a href="#">About Me</a>
-            <a href="index.html#projects">My Portfolio</a>
-            <a href="coding.html">Coding Examples</a>
-            <a href="scs.html">SCS Scheme</a>
-            <h4 class="contact-heading"><a href="index.html#contact">Contact Me</a></h4>
+            <a href="/#projects">My Portfolio</a>
+            <a href="/coding">Coding Examples</a>
+            <a href="/scs">SCS Scheme</a>
+            <h4 class="contact-heading"><a href="/#contact">Contact Me</a></h4>
             <div class="socials">
                 <a href="https://github.com/willstolworthy" target="_blank" class="social-link" aria-label="GitHub">
                     <span class="icon-github"></span>
